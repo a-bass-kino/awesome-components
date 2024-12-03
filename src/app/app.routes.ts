@@ -1,3 +1,13 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    { path:'social-media', loadChildren: () => import('./social-media/social-media.module').then(m => m.SocialMediaModule) },
+    { path:'**', redirectTo: 'social-media' },
+];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)]
+})
+
+export class AppRoutes {}

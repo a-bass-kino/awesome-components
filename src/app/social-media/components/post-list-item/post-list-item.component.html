@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <span highlight color="gray">{{ post.title | titlecase }}</span>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <span>{{ post.createdDate | timeAgo }}</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image *ngIf="post.imageUrl as imageUrl" [src]="imageUrl" [alt]="post.title">
+      <br/>
+      <span class="post-content">{{ post.content | shorten }}</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <app-comment-bis [comments]="post.comments" (newComment)="onNewComment($event)"></app-comment-bis>
+    </mat-card-actions>
+  </mat-card>
