@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Comment } from '../../../core/models/comment';
-import { MaterialModule } from '../../material.module';
 import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { SharedModule } from '../../shared.module';
@@ -8,7 +7,6 @@ import { SharedModule } from '../../shared.module';
 @Component({
   selector: 'app-comments',
   imports: [
-    MaterialModule,
     SharedModule,
     NgFor,
     NgIf,
